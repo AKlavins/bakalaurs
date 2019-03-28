@@ -29,7 +29,7 @@ public class ARController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        return;
          // Check that motion tracking is tracking.
         if (Session.Status != SessionStatus.Tracking)
         {
@@ -74,19 +74,9 @@ public class ARController : MonoBehaviour
             //create a new anchor
             Anchor anchor = hit.Trackable.CreateAnchor(hit.Pose);
 
-            /*
-            GameObject prefab;
-
-                    // Instantiate Andy model at the hit pose.
-                    var andyObject = Instantiate(prefab, hit.Pose.position, hit.Pose.rotation);
-
-                    // Compensate for the hitPose rotation facing away from the raycast (i.e. camera).
-                    andyObject.transform.Rotate(0, k_ModelRotation, 0, Space.Self);
-             */
-
             //set the position of the portal to be the same as the hit position
             Portal.transform.position = hit.Pose.position;
-            //Portal.transform.rotation = hit.Pose.position;
+            Portal.transform.rotation = hit.Pose.rotation;
 
             //set portal to face the camera
             Vector3 cameraPosition = ARCamera.transform.position;
