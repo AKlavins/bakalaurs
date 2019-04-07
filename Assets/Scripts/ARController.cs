@@ -29,7 +29,12 @@ public class ARController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        return;
+        // Exit the app when the 'back' button is pressed.
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
          // Check that motion tracking is tracking.
         if (Session.Status != SessionStatus.Tracking)
         {
@@ -38,6 +43,8 @@ public class ARController : MonoBehaviour
 
             return;
         }
+
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
         //plane detection and after this plane prefabs are instantiated
         Session.GetTrackables<DetectedPlane>(m_NewPlanes, TrackableQueryFilter.New);
