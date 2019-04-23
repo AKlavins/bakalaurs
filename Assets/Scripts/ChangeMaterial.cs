@@ -16,11 +16,6 @@ public class ChangeMaterial : MonoBehaviour
 
     public Material materialThree;
 
-    // void Start()
-    // {
-    //     sphereObject = GameObject.Find("/Portal/Sphere");
-    // }
-
     // Update is called once per frame
     void Update()
     {

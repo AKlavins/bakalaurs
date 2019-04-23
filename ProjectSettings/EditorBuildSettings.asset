@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: c6bc32b333e4cd84389da5c27a4a7c69
   - enabled: 1
-    path: Assets/Scenes/Training.unity
+    path: Assets/Scenes/PortalScene.unity
     guid: 2e69500adbeccbf44a529136922c3ce5
   m_configObjects: {}

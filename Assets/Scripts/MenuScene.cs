@@ -26,6 +26,6 @@ public class MenuScene : MonoBehaviour
     //Button
     public void OnPlayClick()
     {
-        SceneManager.LoadScene("Training");
+        SceneManager.LoadScene("PortalScene");
     }
 }

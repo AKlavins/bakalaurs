@@ -8,21 +8,29 @@ public class PortalManager : MonoBehaviour
 
     public GameObject MainCamera;
 
-    public GameObject Sponza;
+    public GameObject Photo;
 
-    private Material[] SponzaMaterials;
+    private Material[] PhotoMaterials;
 
     private Material PortalPlaneMaterial;
 
     // Start is called before the first frame update
-    void Start()
+    // void Start()
+    // {
+
+    //     PhotoMaterials = Photo.GetComponent<Renderer>().sharedMaterials;
+    //     PortalPlaneMaterial = GetComponent<Renderer>().sharedMaterial;
+        
+    // }
+
+      void Update()
     {
 
-        SponzaMaterials = Sponza.GetComponent<Renderer>().sharedMaterials;
+        PhotoMaterials = Photo.GetComponent<Renderer>().sharedMaterials;
         PortalPlaneMaterial = GetComponent<Renderer>().sharedMaterial;
         
-    } 
-
+    }  
+    
     // Update is called once per frame
     void OnTriggerStay(Collider collider)
     {
@@ -30,20 +38,21 @@ public class PortalManager : MonoBehaviour
 
         if(camPositionInPortalSpace.y <= 0.0f)
         {
-            for(int i = 0; i < SponzaMaterials.Length; ++i)
+            for(int i = 0; i < PhotoMaterials.Length; ++i)
             {
-                SponzaMaterials[i].SetInt("_StencilComp", (int)CompareFunction.NotEqual); 
+                PhotoMaterials[i].SetInt("_StencilComp", (int)CompareFunction.NotEqual); 
             }
 
             PortalPlaneMaterial.SetInt("_CullMode", (int)CullMode.Front);
         }
         
+        
         else if (camPositionInPortalSpace.y < 0.5f)
         {
             //disable stencil test
-            for(int i = 0; i < SponzaMaterials.Length; ++i)
+            for(int i = 0; i < PhotoMaterials.Length; ++i)
             {
-                SponzaMaterials[i].SetInt("_StencilComp", (int)CompareFunction.Always); 
+                PhotoMaterials[i].SetInt("_StencilComp", (int)CompareFunction.Always); 
             }
 
             PortalPlaneMaterial.SetInt("_CullMode", (int)CullMode.Off);
@@ -51,9 +60,9 @@ public class PortalManager : MonoBehaviour
         else
         {
             //enable stencil test
-            for(int i = 0; i < SponzaMaterials.Length; ++i)
+            for(int i = 0; i < PhotoMaterials.Length; ++i)
             {
-                SponzaMaterials[i].SetInt("_StencilComp", (int)CompareFunction.Equal); 
+                PhotoMaterials[i].SetInt("_StencilComp", (int)CompareFunction.Equal); 
             }
 
             PortalPlaneMaterial.SetInt("_CullMode", (int)CullMode.Back);
