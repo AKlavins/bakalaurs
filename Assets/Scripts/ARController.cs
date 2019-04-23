@@ -49,6 +49,11 @@ public class ARController : MonoBehaviour
         //plane detection and after this plane prefabs are instantiated
         Session.GetTrackables<DetectedPlane>(m_NewPlanes, TrackableQueryFilter.New);
         
+        // Vector3 camPositionInPortalSpace = transform.InverseTransformPoint(ARCamera.transform.position);
+
+
+        // if(camPositionInPortalSpace.y < 0.0f)
+        // {
         //instantiate a grid for each tracked plane in m_NewPlanes
         for(int i = 0; i < m_NewPlanes.Count; ++i)
         {
@@ -57,6 +62,8 @@ public class ARController : MonoBehaviour
             //set the position of the grid and odify the vertices of the attached mesh
             grid.GetComponent<GridVisualizer>().Initialize(m_NewPlanes[i]);
         }
+        
+        // }
 
         //check if user touches the screen
         Touch touch;

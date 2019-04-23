@@ -14,15 +14,6 @@ public class PortalManager : MonoBehaviour
 
     private Material PortalPlaneMaterial;
 
-    // Start is called before the first frame update
-    // void Start()
-    // {
-
-    //     PhotoMaterials = Photo.GetComponent<Renderer>().sharedMaterials;
-    //     PortalPlaneMaterial = GetComponent<Renderer>().sharedMaterial;
-        
-    // }
-
       void Update()
     {
 

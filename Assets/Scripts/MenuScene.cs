@@ -28,4 +28,9 @@ public class MenuScene : MonoBehaviour
     {
         SceneManager.LoadScene("PortalScene");
     }
+
+    public void OnQuitClick()
+    {
+        Application.Quit();
+    }
 }
