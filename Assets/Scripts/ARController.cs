@@ -52,7 +52,7 @@ public class ARController : MonoBehaviour
         // Vector3 camPositionInPortalSpace = transform.InverseTransformPoint(ARCamera.transform.position);
 
 
-        // if(camPositionInPortalSpace.y < 0.0f)
+        // if(camPositionInPortalSpace.y > 0.0f)
         // {
         //instantiate a grid for each tracked plane in m_NewPlanes
         for(int i = 0; i < m_NewPlanes.Count; ++i)
@@ -108,4 +108,5 @@ public class ARController : MonoBehaviour
         }
 
     }
+
 }

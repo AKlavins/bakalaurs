@@ -38,7 +38,7 @@ public class PortalManager : MonoBehaviour
         }
         
         
-        else if (camPositionInPortalSpace.y < 0.5f)
+        else if (camPositionInPortalSpace.y < 0.3f) //0.5
         {
             //disable stencil test
             for(int i = 0; i < PhotoMaterials.Length; ++i)

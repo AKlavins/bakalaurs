@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using GoogleARCore;
 
 public class MenuScene : MonoBehaviour
 {
@@ -23,6 +24,18 @@ public class MenuScene : MonoBehaviour
         fadeGroup.alpha = 1 - Time.timeSinceLevelLoad * fadeInSpeed;
     }
 
+    //method to turn on/off plane visualization 
+    public void VisualizePlanes(bool showPlanes)
+    {
+        foreach (GameObject plane in GameObject.FindGameObjectsWithTag("Plane"))
+        {
+            Renderer r = plane.GetComponent<Renderer>();
+            GridVisualizer t = plane.GetComponent<GridVisualizer>();
+            r.enabled = showPlanes;
+            t.enabled = showPlanes;
+        }
+    }
+
     //Button
     public void OnPlayClick()
     {
@@ -33,4 +46,15 @@ public class MenuScene : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void OnVisualizeOff()
+    {
+        VisualizePlanes(false);
+    }
+
+    public void OnVisualizeOn()
+    {
+        VisualizePlanes(true);
+    }
+
 }

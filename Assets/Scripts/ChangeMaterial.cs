@@ -18,7 +18,6 @@ public class ChangeMaterial : MonoBehaviour
 
     public GameObject textPlane;
 
-   // public string textOne = "Ezernieku karsta kritenes ir 52 ha"+Environment.NewLine+"plašs dabas piemineklis, kas"+Environment.NewLine+"atrodas Viduslatvijas zemienē"+Environment.NewLine+"Siguldas novadā Allažu pagastā."+Environment.NewLine+"Kritenes ir karsta procesu rezultāts."+Environment.NewLine+"Kopš 1977. gada šī vieta ir valsts"+Environment.NewLine+"aizsardzībā kā ģeoloģiskais dabas"+Environment.NewLine+"piemineklis, kopš 2001. gada"+Environment.NewLine+"iekļautas Latvijas aizsargājamo"+Environment.NewLine+"ģeoloģisko un ģeomorfoloģisko"+Environment.NewLine+"dabas pieminekļu sarakstā.";
     private string textOne = @"Ezernieku karsta kritenes ir 52 ha
 plašs dabas piemineklis, kas 
 atrodas Viduslatvijas zemienē 
